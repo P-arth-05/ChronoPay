@@ -58,6 +58,23 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 1 }}
             className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
           >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 text-lg h-auto font-poppins font-medium transition-all duration-300">
+                Choose Payment
+                <ArrowRight size={20} className="ml-2" />
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                variant="outline" 
+                className="border-gray-600 text-white bg-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:to-cyan-600 hover:border-transparent px-8 py-4 text-lg h-auto font-poppins flex items-center gap-3 transition-all duration-300"
+              >
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center">
+                  <Play size={16} className="text-white ml-0.5" />
+                </div>
+                Watch Demo
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
         

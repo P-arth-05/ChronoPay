@@ -70,7 +70,7 @@ const Hero = () => {
 
             <SignedIn>
               <Button 
-                onClick={() => window.location.href = "./dashboard"}
+                onClick={() => window.location.href = "/dashboard"}
                 className="relative w-full sm:w-auto rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 text-lg h-auto font-poppins font-medium transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer z-30"
               >
                 Get Started

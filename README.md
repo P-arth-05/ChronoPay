@@ -39,7 +39,7 @@
 | Audio         | SpeechRecognition, wave                         |
 | Image         | PyTorch, torchvision                            |
 | NLP           | NLTK, jiwer                                     |
-| DB            | PostgreSQL / SQLite                             |
+| DB            | PostgreSQL                                      |
 | DevOps        | Docker, Docker Compose, NGINX                   |
 | Smart Contract| Solidity (ERC-20-like TimeCoin)                 |
 
@@ -48,46 +48,51 @@
 ##  GitHub Structure
 
 ```
-chronopay/
+ChronoPay/
 │
-├── backend/
-│   ├── app/
-│   │   ├── main.py                # FastAPI entrypoint
-│   │   ├── routes/                # API routes (users, tasks, rewards)
-│   │   ├── models/                # SQLAlchemy models
-│   │   ├── schemas/               # Pydantic request/response models
-│   │   ├── services/              # Business logic (task assignment, reward logic)
-│   │   └── database.py            # DB setup and session
-│   ├── ai_validation/
-│   │   ├── nlp_quality.py         # Translation scoring
-│   │   ├── image_quality.py       # Vision model task validation
-│   │   ├── audio_quality.py       # WER/CER check
-│   │   └── utils.py               # Preprocessing and metrics
-│   ├── utils/
-│   │   ├── auth.py                # JWT verification
-│   │   ├── db_ops.py              # DB ops
-│   │   ├── storage.py             # File handling
-│   │   ├── time_ledger.py         # Tracks time-based credits
-│   │   └── ai_eval.py             # Entry point for AI evaluation
-│   ├── tests/
-│   │   ├── test_users.py
-│   │   └── test_tasks.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
+├── Backend/
+│   ├── ai_validation/
+│   │   ├── audio_quality.py
+│   │   ├── image_quality.py
+│   │   ├── nlp_quality.py
+│   │   └── validator.py
+│   ├── app/
+│   │   ├── create_tables.py
+│   │   ├── database.py
+│   │   ├── main.py
+│   │   ├── models/
+│   │   │   ├── redemption.py, reward.py, submission.py, task.py, time_wallet.py, user.py
+│   │   ├── routes/
+│   │   │   ├── redeem_route.py, rewards_route.py, submit_task_route.py, verify_task_route.py
+│   │   └── utils/
+│   │       ├── ai_eval.py, auth.py, db_ops.py, storage.py, time_ledger.py
+│   ├── pyproject.toml
+│   └── uv.lock
+
 ├── frontend/
-│   └── ...                        # Next.js / React app
-│
-├── smart_contracts/
-│   └── TimeCoin.sol               # ERC-20 token logic
-│
+│   ├── index.html
+│   ├── src/
+│   │   ├── App.jsx, App.css, index.css, main.jsx
+│   │   ├── components/
+│   │   │   ├── Header, Footer, Hero, Roadmap, HowItWorks, StorePreview, BentoGrid, ui/*
+│   │   ├── pages/
+│   │   │   ├── Dashboard, Tasks, Store, Index, NotFound
+│   │   └── hooks/, lib/
+│   ├── public/
+│   │   ├── robots.txt, vite.svg
+│   ├── tailwind.config.ts, vite.config.ts
+│   └── tsconfig.json, postcss.config.js, package.json
+
 ├── infra/
-│   ├── docker-compose.yml
-│   └── nginx.conf
-│
-├── .env.example
+│   ├── docker-compose.yml
+│   └── nginx.conf
+
+├── smart_contracts/
+│   └── TimeCoin.sol
+
 ├── README.md
-└── LICENSE
+├── LICENSE
+└── .env.example
 ```
 
 ---
@@ -143,4 +148,3 @@ docker-compose up --build
 - Token staking for reward boosts
 - Marketplace for service redemptions
 - Federated/Edge AI eval for privacy
-

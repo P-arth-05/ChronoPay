@@ -29,7 +29,7 @@ const Index = () => {
           ]
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0"
+        className="absolute inset-0 z-0"
       ></motion.div>
       
       {/* Floating orbs with animations */}
@@ -40,7 +40,7 @@ const Index = () => {
           scale: [1, 1.1, 1]
         }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-full blur-3xl"
+        className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-full blur-3xl z-0"
       ></motion.div>
       <motion.div 
         animate={{ 
@@ -49,7 +49,7 @@ const Index = () => {
           scale: [1, 0.9, 1]
         }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl"
+        className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl z-0"
       ></motion.div>
       <motion.div 
         animate={{ 
@@ -57,7 +57,7 @@ const Index = () => {
           scale: [1, 1.2, 1]
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-pink-500/10 to-violet-500/10 rounded-full blur-2xl"
+        className="z-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-pink-500/10 to-violet-500/10 rounded-full blur-2xl"
       ></motion.div>
       
       <div className="relative z-10">
@@ -66,6 +66,7 @@ const Index = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className='z-5'
         >
           <Hero />
         </motion.div>

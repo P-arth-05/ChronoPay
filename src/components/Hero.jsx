@@ -8,11 +8,11 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       {/* Animated grid background */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 -z-10">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black,transparent)]"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center z-0">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -56,46 +56,45 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start z-0"
+            className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start relative z-20"
           >
             {/* Get Started Button */}
             <SignedOut>
               <SignInButton fallbackRedirectUrl="/dashboard">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className='z-0'>
-                  <Button className="z-50 w-full sm:w-auto rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 text-lg h-auto font-poppins font-medium transition-all duration-300">
-                    Get Started
-                    <ArrowRight size={20} className="ml-2" />
-                  </Button>
-                </motion.div>
+                <Button className="relative w-full sm:w-auto rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 text-lg h-auto font-poppins font-medium transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer z-30">
+                  Get Started
+                  <ArrowRight size={20} className="ml-2" />
+                </Button>
               </SignInButton>
             </SignedOut>
 
             <SignedIn>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className='z-0'>
-                <Button 
-                  onClick={() => window.location.href = "/dashboard"}
-                  className="z-50 w-full sm:w-auto rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 text-lg h-auto font-poppins font-medium transition-all duration-300"
-                >
-                  Get Started
-                  <ArrowRight size={20} className="ml-2" />
-                </Button>
-              </motion.div>
+              <Button 
+                onClick={() => window.location.href = "/dashboard"}
+                className="relative w-full sm:w-auto rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 text-lg h-auto font-poppins font-medium transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer z-30"
+              >
+                Get Started
+                <ArrowRight size={20} className="ml-2" />
+              </Button>
             </SignedIn>
 
             {/* Watch Demo Button */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className='z-0'>
-              <a href="https://drive.google.com/file/d/1-BuQ2FdjHe2XRWEoMwBXAcqNBASDgBnd/view?usp=sharing"> 
-                <Button 
-                  variant="outline" 
-                  className="z-50 w-full sm:w-auto rounded-2xl border-gray-600 text-white bg-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:to-cyan-600 hover:border-transparent px-8 py-4 text-lg h-auto font-poppins flex items-center gap-3 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center">
-                    <Play size={11} className="text-white ml-0.5" />
-                  </div>
-                  Watch Demo
-                </Button>
-              </a>
-            </motion.div>
+            <a 
+              href="https://drive.google.com/file/d/1-BuQ2FdjHe2XRWEoMwBXAcqNBASDgBnd/view?usp=sharing"
+              className="relative z-30"
+              target="_blank"
+              rel="noopener noreferrer"
+            > 
+              <Button 
+                variant="outline" 
+                className="relative w-full sm:w-auto rounded-2xl border-gray-600 text-white bg-transparent hover:bg-gradient-to-r hover:from-purple-600 hover:to-cyan-600 hover:border-transparent px-8 py-4 text-lg h-auto font-poppins flex items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center">
+                  <Play size={11} className="text-white ml-0.5" />
+                </div>
+                Watch Demo
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
         
@@ -176,7 +175,7 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [-5, 5, -5], rotate: [-2, 2, -2] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 w-24 h-16 bg-gradient-to-br from-purple-500/80 to-pink-500/80 rounded-xl backdrop-blur-sm border border-purple-400/30 p-3"
+              className="absolute -top-6 -right-6 w-24 h-16 bg-gradient-to-br from-purple-500/80 to-pink-500/80 rounded-xl backdrop-blur-sm border border-purple-400/30 p-3 pointer-events-none"
             >
               <div className="w-full h-2 bg-white/40 rounded mb-2"></div>
               <div className="w-2/3 h-2 bg-white/40 rounded"></div>
@@ -185,7 +184,7 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [5, -5, 5], rotate: [2, -2, 2] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-8 -left-8 w-28 h-20 bg-gradient-to-br from-cyan-500/80 to-blue-500/80 rounded-xl backdrop-blur-sm border border-cyan-400/30 p-3"
+              className="absolute -bottom-8 -left-8 w-28 h-20 bg-gradient-to-br from-cyan-500/80 to-blue-500/80 rounded-xl backdrop-blur-sm border border-cyan-400/30 p-3 pointer-events-none"
             >
               <div className="w-full h-2 bg-white/40 rounded mb-2"></div>
               <div className="w-3/4 h-2 bg-white/40 rounded mb-2"></div>

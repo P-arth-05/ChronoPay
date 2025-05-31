@@ -45,7 +45,7 @@ const Dashboard = () => {
                 <Coins size={24} className="text-purple-400" />
                 <span className="text-purple-300 text-sm font-poppins">Total Earned</span>
               </div>
-              <div className="text-3xl font-bold text-white font-outfit">1,250</div>
+              <div className="text-3xl font-bold text-white font-outfit">550</div>
               <div className="text-purple-300 text-sm font-poppins">ChronoCoins</div>
             </div>
 
@@ -54,26 +54,26 @@ const Dashboard = () => {
                 <Clock size={24} className="text-cyan-400" />
                 <span className="text-cyan-300 text-sm font-poppins">Time Invested</span>
               </div>
-              <div className="text-3xl font-bold text-white font-outfit">24.5</div>
+              <div className="text-3xl font-bold text-white font-outfit">12.5</div>
               <div className="text-cyan-300 text-sm font-poppins">Hours</div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-600/20 to-green-800/20 border border-green-500/30 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-cyan-800/20 to-cyan-600/20 border border-cyan-500/30 rounded-2xl p-6">
               <div className="flex items-center justify-between mb-4">
-                <TrendingUp size={24} className="text-green-400" />
-                <span className="text-green-300 text-sm font-poppins">Tasks Completed</span>
+                <TrendingUp size={24} className="text-cyan-400" />
+                <span className="text-cyan-300 text-sm font-poppins">Tasks Completed</span>
               </div>
-              <div className="text-3xl font-bold text-white font-outfit">47</div>
-              <div className="text-green-300 text-sm font-poppins">This month</div>
+              <div className="text-3xl font-bold text-white font-outfit">24</div>
+              <div className="text-cyan-300 text-sm font-poppins">This month</div>
             </div>
 
-            <div className="bg-gradient-to-br from-pink-600/20 to-pink-800/20 border border-pink-500/30 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-purple-800/20 to-purple-600/20 border border-purple-500/30 rounded-2xl p-6">
               <div className="flex items-center justify-between mb-4">
-                <Gift size={24} className="text-pink-400" />
-                <span className="text-pink-300 text-sm font-poppins">Rewards Claimed</span>
+                <Gift size={24} className="text-purple-400" />
+                <span className="text-purple-300 text-sm font-poppins">Rewards Claimed</span>
               </div>
               <div className="text-3xl font-bold text-white font-outfit">8</div>
-              <div className="text-pink-300 text-sm font-poppins">Total</div>
+              <div className="text-purple-300 text-sm font-poppins">Total</div>
             </div>
           </div>
 

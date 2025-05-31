@@ -78,8 +78,8 @@ const Tasks = () => {
   const getDifficultyColor = (difficulty) => {
     switch (difficulty) {
       case 'Easy': return 'bg-green-900/30 text-green-300 border-green-600/40';
-      case 'Medium': return 'bg-yellow-900/30 text-yellow-300 border-yellow-600/40';
-      case 'Hard': return 'bg-red-900/30 text-red-300 border-red-600/40';
+      case 'Medium': return 'bg-yellow-900/30 text-yellow-400 border-yellow-600/40';
+      case 'Hard': return 'bg-red-900/30 text-red-500 border-red-600/40';
       default: return 'bg-gray-900/30 text-gray-300 border-gray-600/40';
     }
   };
